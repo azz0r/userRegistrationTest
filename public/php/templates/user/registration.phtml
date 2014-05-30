@@ -1,0 +1,44 @@
+<form role="form" method="post" action="/">
+    <input type="hidden" name="submitted" value="1" />
+    <?php if (!empty($this->errors)) { ?>
+            <?php foreach ($this->errors as $key => $value) { ?>
+                <p class="alert-warning alert"><?php echo $value; ?></p>
+           <?php } ?>
+        </ul>
+    <?php } ?>
+    <div class="form-group">
+        <label for="forename">Forename</label>
+        <input type="text" class="form-control" id="forename" placeholder="Enter forename"  name="forename"
+               value="<?php echo isset($this->formdata['forename']) ? $this->formdata['forename'] : ''; ?>" />
+    </div>
+    <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname"
+               value="<?php echo isset($this->formdata['surname']) ? $this->formdata['surname'] : ''; ?>" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+               value="<?php echo isset($this->formdata['email']) ? $this->formdata['email'] : ''; ?>" />
+
+    </div>
+    <div class="form-group">
+        <label for="telephone_number">Telephone Number</label>
+        <input type="text" class="form-control" id="telephone_number" placeholder="Enter telephone_number" name="telephone_number"
+               value="<?php echo isset($this->formdata['telephone_number']) ? $this->formdata['telephone_number'] : ''; ?>" />
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Date of Birthday</label>
+        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+               value="<?php echo isset($this->formdata['date_of_birth']) ? $this->formdata['date_of_birth'] : ''; ?>" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="password_confirm">Confirm Password</label>
+        <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

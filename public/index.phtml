@@ -1,0 +1,26 @@
+<?php
+    require_once('init.php');
+    require_once(_PUBLIC.'config.php');
+?><html lang=en xmlns=http://www.w3.org/1999/xhtml>
+
+<head>
+    <title>Site Test</title>
+    <meta http-equiv=Content-Type content="text/html; charset=utf-8"/>
+    <meta http-equiv=Content-Type content="cache" />
+    <?php foreach (array('style', 'bootstrap') as $file) { ?>
+        <link rel="stylesheet/less" type="text/css" href="/css/<?php echo $file; ?>.less" />
+    <?php } ?>
+    <script src="/js/less.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>My Site Test</h1>
+<div id="wrapper">
+    <div id="content">
+        <div id="contentInner">
+            <?php require_once('php/controller.php'); ?>
+        </div>
+    </div>
+</div>
+</body>
+</html>
